@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Kata20170825_DoesMyNumberLookBigInThis
 {
     [TestClass]
-    public class UnitTest1
+    public class NarcissisticTests
     {
         [TestMethod]
         public void TestMethod1()
