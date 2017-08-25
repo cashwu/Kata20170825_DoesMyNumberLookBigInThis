@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Kata20170825_DoesMyNumberLookBigInThis
@@ -16,6 +17,12 @@ namespace Kata20170825_DoesMyNumberLookBigInThis
         public void input_11_should_return_false()
         {
             NarcissisticShouldBeFalse(11);
+        }
+
+        [TestMethod]
+        public void input_153_should_return_true()
+        {
+            NarcissisticShouldBeTrue(153);
         }
 
         private void NarcissisticShouldBeFalse(int value)
@@ -37,12 +44,7 @@ namespace Kata20170825_DoesMyNumberLookBigInThis
     {
         public bool Narcissistic(int value)
         {
-            if (value < 10)
-            {
-                return true;
-            }
-
-            return false;
+            return value == (int)value.ToString().Sum(n => Math.Pow(char.GetNumericValue(n), value.ToString().Length));
         }
     }
 }
