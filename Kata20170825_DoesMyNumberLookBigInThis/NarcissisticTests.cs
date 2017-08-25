@@ -12,6 +12,19 @@ namespace Kata20170825_DoesMyNumberLookBigInThis
             NarcissisticShouldBeTrue(1);
         }
 
+        [TestMethod]
+        public void input_11_should_return_false()
+        {
+            NarcissisticShouldBeFalse(11);
+        }
+
+        private void NarcissisticShouldBeFalse(int value)
+        {
+            var kata = new Kata();
+            var actual = kata.Narcissistic(value);
+            Assert.IsFalse(actual);
+        }
+
         private static void NarcissisticShouldBeTrue(int value)
         {
             var kata = new Kata();
@@ -24,7 +37,12 @@ namespace Kata20170825_DoesMyNumberLookBigInThis
     {
         public bool Narcissistic(int value)
         {
-            return true;
+            if (value < 10)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
